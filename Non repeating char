@@ -1,0 +1,15 @@
+public class Main
+{
+	public static void main(String[] args) {
+		String g="skillrack";
+        int arr[]=new int[256];
+        for(int i=0;i<g.length();i++){
+            arr[g.charAt(i)]++;
+        }
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]==1){
+                System.out.print((char)i);
+            }
+        }
+	}
+}
