@@ -1,0 +1,48 @@
+public class Main
+{
+    static int isarm(int h,int y){
+        int z=0,pow=0,sum=0,l=h;
+        while(h>0){
+           z=h%10;
+           pow=1;
+           for(int i=0;i<y;i++){
+               pow=pow*z;
+           }
+           sum=sum+pow;
+           h=h/10;
+       }
+       if(sum==l){
+           return sum; 
+       }
+       return 1;
+    }
+	public static void main(String[] args) {
+		int n=1634;
+		int g=n,count=0;
+		while(g>0){
+		    g=g/10;
+		    count++;
+		}
+		isarm(n,count);
+		int d=0,sum=0;
+		if(isarm(n,count)==n){
+		    while(n>0){
+		        d=n%10;
+		        if(d%2==0){
+		            sum=sum+d;
+		        }
+		        n=n/10;
+		    }
+		}
+		else{
+		    while(n>0){
+		        d=n%10;
+		        if(d%2!=0){
+		            sum=sum+d;
+		        }
+		        n=n/10;
+		    }
+		}
+		System.out.print(sum);
+	}
+}
